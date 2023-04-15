@@ -1,8 +1,15 @@
 # \<skippable-video>
 
+Clients **_LOVE_** videos a fullscreen autoplay video despite my protests as frontend dev that browsers and 99.99% users to do not think that way.
+
+So here's a component that lets users skip this video because clients do not seem to understand browsers do not autoplay videos. <small>🤷</small>
+
+<br>
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
+
+Via the node
 
 ```bash
 npm i skippable-video
@@ -12,37 +19,54 @@ npm i skippable-video
 
 ```html
 <script type="module">
-  import 'skippable-video/skippable-video.js';
+  import "skippable-video/skippable-video.js";
 </script>
 
-<skippable-video></skippable-video>
+<style>
+  skippable-video::part(play-button) {
+    font-size: 2rem;
+  }
+
+  skippable-video::part(skip-button) {
+    background-color: grey;
+    color: white;
+    text-transform: uppercase;
+  }
+</style>
+
+<skippable-video src="./link/to/video.mp4" auto-destroy>
+  <div slot="play-button">
+    You'll this slotted if the video isn't autoplayed.
+  </div>
+  <div slot="skip-button">Yes, skip the video please</div>
+</skippable-video>
 ```
 
-## Demoing with Storybook
+## Attributes
 
-To run a local instance of Storybook for your component, run
+**src**: string <br>
+href to video source, similar to `HTMLVideoElement.src`
 
-```bash
-npm run storybook
-```
+**auto-destroy**: boolean <br>
+If true, this component is automatically removed when the video has ended.
 
-To build a production version of Storybook, run
+## Slots
 
-```bash
-npm run storybook:build
-```
+**play-button**: HTMLButtonElement <br>
+Slot contents within the play button.
 
+**skip-button**: HTMLButtonElement <br>
+Slot contents within the skip button.
 
-## Tooling configs
+## cssPart
 
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+**play-button** <br>
+Styles the play button.
 
-If you customize the configuration a lot, you can consider moving them to individual files.
+**skip-button** <br>
+Styles the skip button.
 
-## Local Demo with `web-dev-server`
+## Events
 
-```bash
-npm start
-```
-
-To run a local development server that serves the basic demo located in `demo/index.html`
+**remove** <br>
+Fires when the element is removed by the skip button or `auto-destroy` attribute.

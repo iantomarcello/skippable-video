@@ -9,8 +9,8 @@ import { property, query, state } from 'lit/decorators.js';
  *
  * @fires remove - when the element is removed by the skip button or `auto-destroy` attribute.
  *
- * @attr {String} src - href to video source, similar to `HTMLVideoElement.src`
- * @attr {Boolean} auto-destroy - If true, this component is automatically removed when the video has ended.
+ * @attr {string} src - href to video source, similar to `HTMLVideoElement.src`
+ * @attr {boolean} auto-destroy - If true, this component is automatically removed when the video has ended.
  *
  * @slot play-button - contents within the play HTMLButtonElement.
  * @slot skip-button - contents within the skip HTMLButtonElement.
@@ -57,13 +57,11 @@ export class SkippableVideo extends LitElement {
     }
 
     .skip-button {
-      filter: invert(1);
       position: absolute;
       right: 2rem;
       bottom: 2rem;
       background: transparent;
       text-decoration: underline;
-      mix-blend-mode: difference;
     }
   `;
 
