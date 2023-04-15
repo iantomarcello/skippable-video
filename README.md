@@ -44,29 +44,32 @@ npm i skippable-video
 
 ## Attributes
 
-**src**: string <br>
+`src`: string <br>
 href to video source, similar to `HTMLVideoElement.src`
 
-**auto-destroy**: boolean <br>
+`auto-destroy`: boolean <br>
 If true, this component is automatically removed when the video has ended.
 
 ## Slots
 
-**play-button**: HTMLButtonElement <br>
+`play-button`: HTMLButtonElement <br>
 Slot contents within the play button.
 
-**skip-button**: HTMLButtonElement <br>
+`skip-button`: HTMLButtonElement <br>
 Slot contents within the skip button.
 
-## cssPart
+## CSS Part
 
-**play-button** <br>
+`play-button` <br>
 Styles the play button.
 
-**skip-button** <br>
+`skip-button` <br>
 Styles the skip button.
 
 ## Events
 
-**remove** <br>
+`remove` <br>
 Fires when the element is removed by the skip button or `auto-destroy` attribute.
+
+# Future plans
+Plans to make this component a superset of HTMLVideoElement, i.e. primarily allowing native/original attributes like `controls`, `width`, `height` etc are automatically passed from the host component into the video element in the shadow dom.

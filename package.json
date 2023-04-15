@@ -1,9 +1,9 @@
 {
-  "name": "skippable-video",
+  "name": "@iantomarcello/skippable-video",
   "description": "An autoplay muted video with a skip button.",
   "license": "MIT",
   "author": "Ian Yong (https://iantomarcello.com)",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
