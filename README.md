@@ -1,8 +1,8 @@
 # \<skippable-video>
 
-Clients **_LOVE_** videos a fullscreen autoplay video despite my protests as frontend dev that browsers and 99.99% users to do not think that way.
+Clients **_LOVE_** fullscreen autoplay videos, despite my protests as frontend dev that browsers and 99.99% users to do not think that way.
 
-So here's a component that lets users skip this video because clients do not seem to understand browsers do not autoplay videos. <small>🤷</small>
+So here's a component that lets users skip this video, because clients do not seem to understand browsers do not autoplay videos when landing into a new website. <small>🤷</small>
 
 <br>
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
